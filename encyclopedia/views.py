@@ -11,11 +11,18 @@ class SearchForm(forms.Form):
     )
 
 class NewPageForm(forms.Form):
-    title = forms.CharField(label="Title")
+    title = forms.CharField(
+        label="Title",
+        widget=forms.TextInput(attrs={
+            'style': 'max-width: 70em; margin-bottom: 2rem',
+            'class': 'form-control'
+        }))
     mkd_content = forms.CharField(
         label="Content",
         widget=forms.Textarea(attrs={
-            'placeholder':'Insert Markdown Content Here'})
+            'placeholder':'Insert Markdown Content Here',
+            'style': 'max-width: 70em; margin-bottom: 2rem', 
+            'class': 'form-control'})
         )
 
 
